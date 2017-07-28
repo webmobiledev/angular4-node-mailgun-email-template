@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "ng": "ng",
     "start": "node server.js",
-    "build": "ng build && node server.js",
+    "postinstall": "ng build",
+    "pree2e": "webdriver-manager update",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.2.5",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -33,6 +33,7 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
+    "@angular/cli": "1.2.5",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",
