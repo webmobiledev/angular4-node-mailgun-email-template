@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/font-awesome/scss/font-awesome';
+
+html, body {
+    height: 100%;
+}
+
+app-root {
+    display: block;
+    height: 100%;
+}
+
+app-template {
+    display: block;
+    height: 100%;
+}

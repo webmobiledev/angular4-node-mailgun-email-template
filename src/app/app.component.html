@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-sm-12">
+    <img src="assets/images/logo.jpg" class="logo">
+  </div>
+  <div class="col-sm-12">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum socils natoque penatibus et magnis dis parturient montes, naascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo...</p>
+  </div>
+  <div class="col-sm-12">
+    <div class="row carousel align-items-center">
+      <div class="btn" (click)="changePos('prev')">
+        <i class="fa fa-chevron-left"></i>
+      </div>
+      <div class="content mt-4 mb-4">
+        <div class="row">
+          <div class="col-sm-3 hidden-sm-down pt-4">
+            <app-template [pos]="'prev'"></app-template>
+          </div>
+          <div class="col-sm-6">
+            <app-template [pos]="'center'"></app-template>
+          </div>
+          <div class="col-sm-3 hidden-sm-down pt-4">
+            <app-template [pos]="'next'"></app-template>
+          </div>
+        </div>
+      </div>
+      <div class="btn" (click)="changePos('next')">
+        <i class="fa fa-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <form class="text-center" [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" [formControl]="complexForm.controls['name']" value="saf">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email Address" [formControl]="complexForm.controls['email']" value="dragon.blue128@yandex.com">
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!complexForm.valid">Send Email</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+.card {
+    height: 100%;
+}
+
+.card-outline-success {
+    border-radius: 2px;
+}
+
+.card-outline-secondary {
+    h5 {
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+}
