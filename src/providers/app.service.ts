@@ -11,11 +11,11 @@ export class AppService {
 
   constructor(public http: Http) { 
     this.templates = [
-      {title: "Template 1", content: "This is email template1."},
-      {title: "Template 2", content: "This is email template2."},
-      {title: "Template 3", content: "This is email template3."},
-      {title: "Template 4", content: "This is email template4."},
-      {title: "Template 5", content: "This is email template5."},
+      {title: "Template 1", content: "Subject: Hello There\r\n\r\nThanks for visiting this site.\r\nFrom here you can email this text to us simply by filling in your name and email address below.\r\n\r\nWe will get back to you soon.\r\nThanks again for visiting.\r\n\r\nSincerely,\r\n\r\n"},
+      {title: "Template 2", content: "Subject: Hello There\r\n\r\nThanks for visiting this site.\r\nFrom here you can email this text to us simply by filling in your name and email address below.\r\n\r\nWe will get back to you soon.\r\nThanks again for visiting.\r\n\r\nSincerely,\r\n\r\n"},
+      {title: "Template 3", content: "Subject: Hello There\r\n\r\nThanks for visiting this site.\r\nFrom here you can email this text to us simply by filling in your name and email address below.\r\n\r\nWe will get back to you soon.\r\nThanks again for visiting.\r\n\r\nSincerely,\r\n\r\n"},
+      {title: "Template 4", content: "Subject: Hello There\r\n\r\nThanks for visiting this site.\r\nFrom here you can email this text to us simply by filling in your name and email address below.\r\n\r\nWe will get back to you soon.\r\nThanks again for visiting.\r\n\r\nSincerely,\r\n\r\n"},
+      {title: "Template 5", content: "Subject: Hello There\r\n\r\nThanks for visiting this site.\r\nFrom here you can email this text to us simply by filling in your name and email address below.\r\n\r\nWe will get back to you soon.\r\nThanks again for visiting.\r\n\r\nSincerely,\r\n\r\n"},
     ];
   }
 
@@ -30,7 +30,7 @@ export class AppService {
   }
 
   send(sender: string, subject: string, name: string) {
-    let body = this.templates[this.currentPos].content + " " + name;
+    let body = this.templates[this.currentPos].content + name;
     return this.http.post('/api/post', {sender: sender, subject: subject, body: body})
       .map(res => res.json());
   }

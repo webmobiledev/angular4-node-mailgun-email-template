@@ -6,7 +6,7 @@ const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
  
 const data = {
   from: 'Excited User <me@samples.mailgun.org>',
-  to: ['pogiest1@yahoo.com', 'dragon.blue721@yandex.com', 'jayc707@gmail.com'],
+  to: ['dragon.blue721@yandex.com'],
   subject: 'Hello',
   text: 'Testing some Mailgun awesomness!'
 };
@@ -21,7 +21,7 @@ router.post('/post', (req, res) => {
   data.subject = req.body.subject;
   data.text = req.body.body;
 
-  mailgun.messages().send(data, function (error, body) {
+  mailgun.messages().send(data, {'content-type': 'text/html'}, function (error, body) {
     res.send(body);
   });
 });
