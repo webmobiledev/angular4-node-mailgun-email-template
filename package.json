@@ -3,14 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
     "start": "node server.js",
     "build": "ng build && node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pree2e": "webdriver-manager update",
-    "preinstall": "npm install -g http-server",
+    "preinstall": "npm install angular-cli -g",
     "postinstall": "ng build --prod"
   },
   "private": true,
