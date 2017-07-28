@@ -11,11 +11,11 @@ export class AppService {
 
   constructor(public http: Http) { 
     this.templates = [
-      {title: "Template 1", content: "This is email template."},
-      {title: "Template 2", content: "This is email template."},
-      {title: "Template 3", content: "This is email template."},
-      {title: "Template 4", content: "This is email template."},
-      {title: "Template 5", content: "This is email template."},
+      {title: "Template 1", content: "This is email template1."},
+      {title: "Template 2", content: "This is email template2."},
+      {title: "Template 3", content: "This is email template3."},
+      {title: "Template 4", content: "This is email template4."},
+      {title: "Template 5", content: "This is email template5."},
     ];
   }
 
@@ -29,9 +29,9 @@ export class AppService {
     }
   }
 
-  send(recipient: string, subject: string, name: string) {
-    let body = this.templates[this.currentPos].content + "<br>" + name;
-    return this.http.post('/api/post', {recipient: recipient, subject: subject, body: body})
+  send(sender: string, subject: string, name: string) {
+    let body = this.templates[this.currentPos].content + " " + name;
+    return this.http.post('/api/post', {sender: sender, subject: subject, body: body})
       .map(res => res.json());
   }
 

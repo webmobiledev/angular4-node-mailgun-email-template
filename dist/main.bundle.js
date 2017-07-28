@@ -296,11 +296,11 @@ var AppService = (function () {
         this.currentPos = 1;
         this.pos = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["BehaviorSubject"](this.currentPos);
         this.templates = [
-            { title: "Template 1", content: "This is email template." },
-            { title: "Template 2", content: "This is email template." },
-            { title: "Template 3", content: "This is email template." },
-            { title: "Template 4", content: "This is email template." },
-            { title: "Template 5", content: "This is email template." },
+            { title: "Template 1", content: "This is email template1." },
+            { title: "Template 2", content: "This is email template2." },
+            { title: "Template 3", content: "This is email template3." },
+            { title: "Template 4", content: "This is email template4." },
+            { title: "Template 5", content: "This is email template5." },
         ];
     }
     AppService.prototype.changePos = function (btn) {
@@ -313,9 +313,9 @@ var AppService = (function () {
             this.pos.next(this.currentPos);
         }
     };
-    AppService.prototype.send = function (recipient, subject, name) {
-        var body = this.templates[this.currentPos].content + "<br>" + name;
-        return this.http.post('/api/post', { recipient: recipient, subject: subject, body: body })
+    AppService.prototype.send = function (sender, subject, name) {
+        var body = this.templates[this.currentPos].content + " " + name;
+        return this.http.post('/api/post', { sender: sender, subject: subject, body: body })
             .map(function (res) { return res.json(); });
     };
     return AppService;

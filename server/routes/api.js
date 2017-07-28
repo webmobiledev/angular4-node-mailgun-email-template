@@ -17,12 +17,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
-  data.to = req.body.recipient;
+  data.from = req.body.sender;
   data.subject = req.body.subject;
   data.text = req.body.body;
 
   mailgun.messages().send(data, function (error, body) {
-    console.log(body);
+    res.send(body);
   });
 });
 
