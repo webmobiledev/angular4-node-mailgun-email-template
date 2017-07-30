@@ -3,32 +3,24 @@
     <img src="assets/images/logo.jpg" class="logo">
   </div>
   <div class="col-sm-12">
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum socils natoque penatibus et magnis dis parturient montes, naascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo...</p>
+    <p>Please stand with us in opposition to the ill-conceived NUSD proposal. We have created several letters that are directed to the County Board of Education that can be easily customizable and personalized to create greater impact. Simply provide your name, address and email in the box below, select the letter(s) you would like to send and hit SEND. It's that easy!<p>
+    <p>The vote to move the petition forward by the Board of Education will take place on the 29th of August. We need to make sure our voices are heard, so please take a couple of minutes to send in your letters today and SHARE this with your family and friends to help us defeat this divisive and disruptive proposal that will only benefit a few select people and disenfranchise many thousands more.</p>
   </div>
   <div class="col-sm-12">
-    <div class="row carousel align-items-center">
-      <div class="btn" (click)="changePos('prev')">
-        <i class="fa fa-chevron-left"></i>
-      </div>
-      <div class="content mt-4 mb-4">
-        <div class="row">
-          <div class="col-sm-3 hidden-sm-down pt-4">
-            <app-template [pos]="'prev'"></app-template>
+    <carousel (activeSlideChange)="changeSlide($event)">
+      <slide *ngFor="let t of templates">
+        <div class="card text-center">
+          <div class="card-header">
+            <h5>{{t.title}}</h5>
           </div>
-          <div class="col-sm-6">
-            <app-template [pos]="'center'"></app-template>
-          </div>
-          <div class="col-sm-3 hidden-sm-down pt-4">
-            <app-template [pos]="'next'"></app-template>
+          <div class="card-block">
+            <p>{{t.content}}</p>
           </div>
         </div>
-      </div>
-      <div class="btn" (click)="changePos('next')">
-        <i class="fa fa-chevron-right"></i>
-      </div>
-    </div>
+      </slide>
+    </carousel>
   </div>
-  <div class="col-sm-12">
+  <div class="col-sm-12 mt-4 mb-4">
     <form class="text-center" [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Name" [formControl]="complexForm.controls['name']" value="saf">

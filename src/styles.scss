@@ -16,3 +16,22 @@ app-template {
     display: block;
     height: 100%;
 }
+
+slide {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background: #000000;
+    opacity: .1;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: .3;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
