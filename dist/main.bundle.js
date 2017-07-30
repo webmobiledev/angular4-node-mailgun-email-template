@@ -160,7 +160,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".card {\n  height: 100%; }\n\n.card-outline-success {\n  border-radius: 2px; }\n\n.card-outline-secondary h5 {\n  font-weight: 300; }\n\n.card-outline-secondary p {\n  font-size: 12px;\n  margin-bottom: 0; }\n", ""]);
+exports.push([module.i, ".card {\n  height: 100%;\n  max-height: 500px;\n  overflow: hidden;\n  overflow-y: scroll; }\n\n.card-outline-success {\n  border-radius: 2px; }\n\n.card-outline-secondary h5 {\n  font-weight: 300; }\n\n.card-outline-secondary p {\n  font-size: 12px;\n  margin-bottom: 0; }\n", ""]);
 
 // exports
 
