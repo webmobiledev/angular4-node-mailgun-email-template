@@ -16,6 +16,7 @@ export class AppComponent {
     this.complexForm = fb.group({
       'name': [null, Validators.compose([Validators.required])],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'city': [null, Validators.compose([Validators.required])]
     });
 
     this.templates = this.service.templates;
@@ -26,7 +27,7 @@ export class AppComponent {
   }
 
   submitForm(value: any):void {
-    this.service.send(value.email, "Hello", value.name)
+    this.service.send(value.email, "Hello", value.name, value.city)
     .subscribe(
       res => {
         console.log(res);

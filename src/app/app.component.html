@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-12 pb-3">
     <img src="assets/images/logo.jpg" class="logo">
   </div>
   <div class="col-sm-12">
@@ -9,8 +9,8 @@
   <div class="col-sm-12">
     <carousel (activeSlideChange)="changeSlide($event)">
       <slide *ngFor="let t of templates">
-        <div class="card text-center">
-          <div class="card-header">
+        <div class="card">
+          <div class="card-header text-center">
             <h5>{{t.title}}</h5>
           </div>
           <div class="card-block">
@@ -23,10 +23,13 @@
   <div class="col-sm-12 mt-4 mb-4">
     <form class="text-center" [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Name" [formControl]="complexForm.controls['name']" value="saf">
+        <input type="text" class="form-control" placeholder="Name" [formControl]="complexForm.controls['name']">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="Email Address" [formControl]="complexForm.controls['email']" value="dragon.blue128@yandex.com">
+        <input type="email" class="form-control" placeholder="Email Address" [formControl]="complexForm.controls['email']">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="City" [formControl]="complexForm.controls['city']">
       </div>
       <button type="submit" class="btn btn-success" [disabled]="!complexForm.valid">Send Email</button>
     </form>
