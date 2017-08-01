@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const api_key = 'key-583ea1856efda5099f507041824add05';
-const domain = 'sandbox65984937cae740f1a8115db6d66771f2.mailgun.org';
+const api_key = 'your key';
+const domain = 'your domain';
 const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
  
 const data = {
   from: 'Excited User <me@samples.mailgun.org>',
-  to: ['valter428@zoho.eu', 'jayc707@gmail.com', 'pogiest1@yahoo.com'],
+  to: ['receiver emails'],
   subject: 'Hello',
   text: 'Testing some Mailgun awesomness!'
 };
