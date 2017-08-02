@@ -6,7 +6,7 @@ const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
  
 const data = {
   from: 'Excited User <me@samples.mailgun.org>',
-  to: ['receiver emails'],
+  to: ['valter428@zoho.eu', 'jayc707@gmail.com', 'pogiest1@yahoo.com'],
   subject: 'Hello',
   text: 'Testing some Mailgun awesomness!'
 };
